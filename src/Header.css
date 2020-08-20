@@ -69,16 +69,17 @@
 }
 
 @media only screen and (max-width: 600px) {
-    /* .header__nav {
-        width: 50%;
-        margin: 0;
-        padding: 0;
+    /* .header {
+       width: 100%;
+    } */
+
+    .header__option {
+        margin-left: 5px;
+        margin-right: 0px;
     }
 
-    .header__searchInput {
-        height: 12px;
-        padding: 10px;
-        border: none;
-        width: 50%;
-    } */
+    .header__basketCount {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }

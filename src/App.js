@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
-import Checkout from './Checkout';
-import Login from './Login';
-import { useStateValue } from './StateProvider';
+import Checkout from "./Checkout";
+import Login from "./Login";
+import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
-
 
 function App() {
   const [{ basket }, dispatch] = useStateValue();
@@ -17,25 +16,23 @@ function App() {
       if (authUser) {
         // the user is logged in...
         dispatch({
-          type: 'SET_USER',
-          user: authUser
-        })
+          type: "SET_USER",
+          user: authUser,
+        });
       } else {
         // the user is logged out...
         dispatch({
-          type: 'SET_USER',
-          user: null
-        })
+          type: "SET_USER",
+          user: null,
+        });
       }
-    })
-  
-  return () => {
-    // Any cleanup operations go in here...
-    unsubscribe();
-  }
-  
-  }, [])
+    });
 
+    return () => {
+      // Any cleanup operations go in here...
+      unsubscribe();
+    };
+  }, []);
 
   return (
     <Router>
@@ -43,10 +40,10 @@ function App() {
         <Switch>
           <Route path="/checkout">
             <Header />
-            <Checkout/>
+            <Checkout />
           </Route>
           <Route path="/login">
-            <Login/>
+            <Login />
           </Route>
           <Route path="/">
             <Header />

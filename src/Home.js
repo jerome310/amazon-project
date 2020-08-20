@@ -11,7 +11,7 @@ function Home() {
       />
 
       {/* Product id, title, price, rating, image */}
-      <div className="home__row">
+      <div className="home__row header__home__row">
         {/* Products */}
         <Product
           id={12425466}
